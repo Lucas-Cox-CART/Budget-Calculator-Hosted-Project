@@ -1,3 +1,21 @@
+function search_job() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('job');
+    // while (input == 0) {
+    //     x[i].style.display="none";
+    // }
+    // let listAvailable = document.getElementsByClassName('job');
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        } else if 
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+
 var GrossIncome = 46200;
 if (typeof GrossIncome == 'number') {
     var GrossMonthly = GrossIncome / 12;
@@ -29,7 +47,7 @@ if (typeof TransactionDescription == 'string') {
                     //Last Item in List?
                     //Yes, End
                     //No, Repeat
-                    document.getElementById("CurrentBalance").innerHTML = (placeholder);
+                    // document.getElementById("CurrentBalance").innerHTML = (levemealon);
         } else {
             console.log("Error! Please enter number into field.")
         }

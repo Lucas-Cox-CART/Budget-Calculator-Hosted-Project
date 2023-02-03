@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.menu > h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 8rem;
+    text-shadow: 4px 4px 4px black;    color: white;
+    text-align: center;
+}
+
+.s1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 100%;
+}
+
+.s1bg {
+    height: 100vh;
+    width: 100%;
+    background-color: #EFDECD;
+}
+
+h2 {
+    font-family: 'Aboreto', cursive;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#searchbar {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 70%;
+}
+
+#list {
+    font-size: 1.5rem;
+}
+
+.job {
+    display: none;
+}
+

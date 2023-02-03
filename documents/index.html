@@ -6,15 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:wght@300;400;600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="menu">
-            <p>Ready to avoid your taxes?</p>
+            <h1>Ready to avoid your taxes?</h1>
         </div>
     </header>
     <main>
-        <p id="CurrentBalance"></p>
+        <section class="s1bg">
+            <section class="s1">
+                <h2>First, find your career.</h2>
+                <input id="searchbar" onkeyup="search_job()" type="text" name="search" placeholder="Search careers...">
+                <ol id='list'>
+                    <li class="job">Technician</li>
+                    <li class="job">Engineer</li>
+                    <li class="job">Doctor</li>
+                    <li class="job">Bartender</li>
+                    <li class="job">Knight</li>
+                    <li class="job">Mother</li>
+                    <li class="job">King</li>
+                </ol>
+            </section>
+        </section>
     </main>
     <footer>
         <section>
@@ -24,3 +44,4 @@
     <script src="../scripts/script.js"></script>
 </body>
 </html>
+<!-- <p id="CurrentBalance"></p> -->

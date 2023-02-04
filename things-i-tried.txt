@@ -1,4 +1,0 @@
-1) Tried to add opacity to a gradient.
-2) Tried to add a gradient to a box-shadow.
-3) Tried to add a reverse animation to search items.
-...to be continued

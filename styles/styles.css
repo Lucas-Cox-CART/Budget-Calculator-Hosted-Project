@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+main {
+    background-color: rgba(14,17,22,255);
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -27,23 +31,42 @@
 .s1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin-left: 20%;
     margin-right: 20%;
     height: 100%;
 }
 
+.s1 > h2 {
+    margin: 30px 10px 10px 10px;
+}
+
 .s1bg {
     height: 100vh;
     width: 100%;
-    background-color: #EFDECD;
+    /* background-color: #EFDECD; */
+    background-color: rgba(14,17,22,255);
 }
 
 h2 {
     font-family: 'Aboreto', cursive;
     font-size: 4rem;
     text-align: center;
+    color: white;
+}
+
+.s1 > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+div > ol {
+    height: 100%;
 }
 
 #searchbar {
@@ -62,10 +85,46 @@ input[type=text]:focus {
 }
 
 #list {
-    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.0rem;
+}
+
+#list > * {
+    height: 210px;
+    width: 210px;
+    text-align: center;
 }
 
 .job {
     display: none;
+    border: 2px black solid;
+    margin: 10px;
+    background: rgba(0,255,196,0.6);
+    background: linear-gradient(180deg, rgba(0,255,196,1) 0%, rgba(0,206,255,1) 100%);
+    justify-content: center;
+    align-items: center;
+    animation: searchItems;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0px 0px 5px 2px #fff;
+}
+
+ol {
+    max-height: calc(70px * 8);
+    overflow-y: auto;
+}
+
+@keyframes searchItems {
+    0% {opacity: 0.1};
+    11% {opacity: 0.2};
+    23% {opacity: 0.3};
+    35% {opacity: 0.4};
+    47% {opacity: 0.5};
+    59% {opacity: 0.6};
+    71% {opacity: 0.7};
+    83% {opacity: 0.8};
+    95% {opacity: 0.9};
+    100% {opacity: 1.0};
 }
 

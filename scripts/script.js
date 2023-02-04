@@ -73,7 +73,7 @@ const data = [
 
 let list = document.getElementById("list");
 for (job of data) {
-    let item = document.createElement("li");
+    let item = document.createElement("div");
     item.innerText = job[0];
     item.setAttribute("class","job");
     list.appendChild(item);
@@ -88,7 +88,7 @@ function search_job() {
             x[i].style.display="none";
         }
         else {
-            x[i].style.display="list-item";                 
+            x[i].style.display="flex";
         }
     }
     if (input=="") {

@@ -6,7 +6,7 @@
 
 main,
 footer {
-    background-color: rgba(14,17,22,255);
+    background-color: rgba(14, 17, 22, 1);
 }
 
 .menu {
@@ -25,7 +25,8 @@ footer {
 .menu > h1 {
     font-family: 'Tangerine', cursive;
     font-size: 8rem;
-    text-shadow: 4px 4px 4px black;    color: white;
+    text-shadow: 4px 4px 4px black;    
+    color: white;
     text-align: center;
 }
 
@@ -44,15 +45,26 @@ footer {
 }
 
 .s1head {
-    color: rgba(130,234,135,255);
+    color: rgba(130, 234, 135, 1);
+}
+
+.s2head {
+    color: rgba(183, 0, 255, 1);
 }
 
 .s1bg {
     height: 110vh;
     width: 100%;
     /* background-color: #EFDECD; */
-    background-color: rgba(14,17,22,255);
+    background-color: rgba(14, 17, 22, 1);
     box-shadow: 0px 0px 30px 20px #0E1116;
+}
+
+.s2bg {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(14, 17, 22, 1);
+    box-shadow: rgba(14, 17, 22, 1);
 }
 
 h2 {
@@ -69,6 +81,30 @@ h2 {
     height: 100%;
     width: 100%;
     margin: 0px 0px 15px 0px;
+}
+
+.s2 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+
+.s2 > div > .placeb {
+    animation: navTurnLeft;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.s2 > div > .placec {
+    animation: navTurnRight;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
 /* div > ol {
@@ -98,6 +134,36 @@ input[type=text]:focus {
     width: 70%;
 }
 
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+div > ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+div > ::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: 1px rgba(255, 255, 255, 1) solid;
+    /* 
+    I'm actually lolling.
+    box-shadow: 0px 0px 5px 5px white; 
+    */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 #list {
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +181,7 @@ input[type=text]:focus {
     display: none;
     border: 2px black solid;
     margin: 10px;
-    background: rgba(0,255,196,0.6);
+    background: rgba(0, 255, 196, 0.6);
     background: linear-gradient(180deg, rgba(0,255,196,1) 0%, rgba(0,206,255,1) 100%);
     flex-direction: column;
     justify-content: center;
@@ -144,3 +210,41 @@ ol {
     100% {opacity: 1.0};
 }
 
+.posNav {
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(14, 17, 22, 1);
+    box-shadow: 0px 0px 5px 2px #fff;
+    position: absolute;
+}
+
+.placeb {
+    z-index: 0;
+}
+
+.placec {
+    z-index: 1;
+}
+
+@keyframes navTurnRight {
+ from {
+    transform: rotate(0deg);
+    transform-origin: center;
+ }
+ to {
+    transform: rotate(-360deg);
+    transform-origin: center;
+ }
+}
+
+@keyframes navTurnLeft {
+    from {
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+    to {
+        transform: rotate(360deg);
+        transform-origin: center;
+    }
+}

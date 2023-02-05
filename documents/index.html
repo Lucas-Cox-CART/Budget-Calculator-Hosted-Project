@@ -12,6 +12,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:wght@300;400;600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -36,7 +40,54 @@
             <h2>Now, enter your <span class="s2head">gross annual income</span>.</h2>
             <section class="s2">
                 <div>
-                    <input id="grossInput" type="text">
+                    <input onkeyup="example()" id="grossInput" type="text">
+                </div>
+                <div>
+                    <div class="labelFlex">
+                        <div class="areaFlex">
+                            <label type="text" for="GrossMonthly">Gross Monthly Income:</label>
+                            <textarea readonly id="GrossMonthly" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="FederalTax">Federal Tax:</label>
+                            <textarea readonly id="FederalTax" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="StateTax">State Tax:</label>
+                            <textarea readonly id="StateTax" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="SocialSecurity">Social Security:</label>
+                            <textarea readonly id="SocialSecurity" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="Medicare">Medicare:</label>
+                            <textarea readonly id="Medicare" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="StateDisability">State Disability:</label>
+                            <textarea readonly id="StateDisability" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="RetirementInvestment">Retirement Investment:</label>
+                            <textarea readonly id="RetirementInvestment" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="MedicalInsurance">Medical Insurance:</label>
+                            <textarea readonly id="MedicalInsurance" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="TotalDeductions">Total Deductions:</label>
+                            <textarea readonly id="TotalDeductions" cols="5" rows="1"></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="text" for="NetMonthly">Net Monthly Income:</label>
+                            <textarea readonly id="NetMonthly" cols="5" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
             </section>
         </div>

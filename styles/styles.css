@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-main {
+main,
+footer {
     background-color: rgba(14,17,22,255);
 }
 
@@ -42,11 +43,16 @@ main {
     margin: 30px 10px 10px 10px;
 }
 
+.s1head {
+    color: rgba(130,234,135,255);
+}
+
 .s1bg {
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     /* background-color: #EFDECD; */
     background-color: rgba(14,17,22,255);
+    box-shadow: 0px 0px 30px 20px #0E1116;
 }
 
 h2 {
@@ -59,14 +65,22 @@ h2 {
 .s1 > div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 100%;
     width: 100%;
-    margin: 10px;
+    margin: 0px 0px 15px 0px;
 }
 
-div > ol {
+/* div > ol {
     height: 100%;
+} */
+
+div > div {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    margin: 10px;
 }
 
 #searchbar {
@@ -88,11 +102,12 @@ input[type=text]:focus {
     display: flex;
     flex-wrap: wrap;
     font-size: 1.0rem;
+    width: 95%;
 }
 
 #list > * {
-    height: 210px;
-    width: 210px;
+    height: 200px;
+    width: 200px;
     text-align: center;
 }
 
@@ -102,16 +117,17 @@ input[type=text]:focus {
     margin: 10px;
     background: rgba(0,255,196,0.6);
     background: linear-gradient(180deg, rgba(0,255,196,1) 0%, rgba(0,206,255,1) 100%);
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     animation: searchItems;
-    animation-duration: 1s;
+    animation-duration: 650ms;
     animation-timing-function: ease-in-out;
     box-shadow: 0px 0px 5px 2px #fff;
 }
 
 ol {
-    max-height: calc(70px * 8);
+    max-height: calc(55px * 12);
     overflow-y: auto;
 }
 

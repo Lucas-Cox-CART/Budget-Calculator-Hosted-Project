@@ -138,7 +138,7 @@ div > ::-webkit-scrollbar-thumb {
 
 /* Searchbar Rules Start */
 #searchbar,
-#grossInput {
+#grossinput {
     padding: 15px;
     border-radius: 10px;
 }

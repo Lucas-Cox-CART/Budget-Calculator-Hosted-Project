@@ -30,7 +30,8 @@ footer {
     text-align: center;
 }
 
-.s1 {
+.s1,
+.s2 {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -38,10 +39,6 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     height: 100%;
-}
-
-.s1 > h2 {
-    margin: 30px 10px 10px 10px;
 }
 
 .s1head {
@@ -57,14 +54,14 @@ footer {
     width: 100%;
     /* background-color: #EFDECD; */
     background-color: rgba(14, 17, 22, 1);
-    box-shadow: 0px 0px 30px 20px #0E1116;
+    box-shadow: 0px 0px 30px 25px rgba(14, 17, 22, 1);
 }
 
 .s2bg {
     height: 100vh;
     width: 100%;
     background-color: rgba(14, 17, 22, 1);
-    box-shadow: rgba(14, 17, 22, 1);
+    box-shadow: 0px 0px 30px 20px rgba(14, 17, 22, 1);
 }
 
 h2 {
@@ -72,6 +69,15 @@ h2 {
     font-size: 4rem;
     text-align: center;
     color: white;
+    margin: 30px 10px 10px 10px;
+}
+
+.s1 > h2 {
+    text-shadow: #FC0 1px 0 5px;
+}
+
+.s2bg > h2 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
 .s1 > div {
@@ -83,35 +89,8 @@ h2 {
     margin: 0px 0px 15px 0px;
 }
 
+.s1 > div > div,
 .s2 > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 150px;
-}
-
-.s2 > div > .placeb {
-    animation: navTurnLeft;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-}
-
-.s2 > div > .placec {
-    animation: navTurnRight;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-}
-
-/* div > ol {
-    height: 100%;
-} */
-
-div > div {
     display: flex;
     justify-content: center;
     align-items: start;
@@ -119,21 +98,9 @@ div > div {
     margin: 10px;
 }
 
-#searchbar {
-    padding: 15px;
-    border-radius: 10px;
-}
 
-input[type=text] {
-    width: 30%;
-    -webkit-transition: width 0.15s ease-in-out;
-    transition: width 0.15s ease-in-out;
-}
 
-input[type=text]:focus {
-    width: 70%;
-}
-
+/* Scrollbar Rules Start*/
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -163,6 +130,26 @@ div > ::-webkit-scrollbar-thumb {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+/* Scrollbar Rules End */
+
+
+
+/* Searchbar Rules Start */
+#searchbar,
+#grossInput {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 70%;
+}
 
 #list {
     display: flex;
@@ -177,24 +164,34 @@ div > ::-webkit-scrollbar-thumb {
     text-align: center;
 }
 
-.job {
-    display: none;
-    border: 2px black solid;
-    margin: 10px;
-    background: rgba(0, 255, 196, 0.6);
-    background: linear-gradient(180deg, rgba(0,255,196,1) 0%, rgba(0,206,255,1) 100%);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: searchItems;
-    animation-duration: 650ms;
-    animation-timing-function: ease-in-out;
-    box-shadow: 0px 0px 5px 2px #fff;
-}
-
 ol {
     max-height: calc(55px * 12);
     overflow-y: auto;
+}
+
+.job {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    background: rgba(0, 255, 196, 0.6);
+    background: linear-gradient(180deg, rgba(0, 255, 196, 1) 0%, rgba(0, 206, 255, 1) 100%);
+    box-shadow: 0px 0px 5px 2px #fff;
+    margin: 10px;
+    animation: searchItems;
+    animation-duration: 650ms;
+    animation-timing-function: ease-in-out;
+}
+
+#list > div:hover {
+    animation: radiantGlow;
+    animation-duration: 1100ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
 }
 
 @keyframes searchItems {
@@ -210,40 +207,69 @@ ol {
     100% {opacity: 1.0};
 }
 
-.posNav {
-	clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    width: 100px;
-    height: 100px;
-    background-color: rgba(14, 17, 22, 1);
-    position: absolute;
-}
-
-.placeb {
-    z-index: 0;
-}
-
-.placec {
-    z-index: 1;
-}
-
-@keyframes navTurnRight {
- from {
-    transform: rotate(0deg);
-    transform-origin: center;
- }
- to {
-    transform: rotate(-360deg);
-    transform-origin: center;
- }
-}
-
-@keyframes navTurnLeft {
+@keyframes radiantGlow {
     from {
-        transform: rotate(0deg);
-        transform-origin: center;
+        background: radial-gradient(#00ffc4 10%, #00ceff 100%);
+    }
+    5% {
+        background: radial-gradient(#00ffc4 15%, #00ceff 100%);
+    }
+    10% {
+        background: radial-gradient(#00ceff 10%, #00ffc4 20%, #00ceff 100%);
+    }
+    15% {
+        background: radial-gradient(#00ceff 15%, #00ffc4 25%, #00ceff 100%);
+    }
+    20% {
+        background: radial-gradient(#00ceff 20%, #00ffc4 30%, #00ceff 100%);
+    }
+    25% {
+        background: radial-gradient(#00ceff 25%, #00ffc4 35%, #00ceff 100%);
+    }
+    30% {
+        background: radial-gradient(#00ceff 30%, #00ffc4 40%, #00ceff 100%);
+    }
+    35% {
+        background: radial-gradient(#00ceff 35%, #00ffc4 45%, #00ceff 100%);
+    }
+    40% {
+        background: radial-gradient(#00ceff 40%, #00ffc4 50%, #00ceff 100%);
+    }
+    45% {
+        background: radial-gradient(#00ceff 45%, #00ffc4 55%, #00ceff 100%);
+    }
+    50% {
+        background: radial-gradient(#00ceff 50%, #00ffc4 60%, #00ceff 100%);
+    }
+    55% {
+        background: radial-gradient(#00ceff 55%, #00ffc4 65%, #00ceff 100%);
+    }
+    60% {
+        background: radial-gradient(#00ceff 60%, #00ffc4 70%, #00ceff 100%);
+    }
+    65% {
+        background: radial-gradient(#00ceff 65%, #00ffc4 75%, #00ceff 100%);
+    }
+    70% {
+        background: radial-gradient(#00ceff 70%, #00ffc4 80%, #00ceff 100%);
+    }
+    75% {
+        background: radial-gradient(#00ceff 75%, #00ffc4 85%, #00ceff 100%);
+    }
+    80% {
+        background: radial-gradient(#00ceff 80%, #00ffc4 90%, #00ceff 100%);
+    }
+    85% {
+        background: radial-gradient(#00ceff 85%, #00ffc4 95%, #00ceff 100%);
+    }
+    90% {
+        background: radial-gradient(#00ceff 90%, #00ffc4 100%, #00ceff 100%);
+    }
+    95% {
+        background: radial-gradient(#00ceff 95%, #00ffc4 100%);        
     }
     to {
-        transform: rotate(360deg);
-        transform-origin: center;
+        background: radial-gradient(#00ceff 100%);
     }
 }
+/* Searchbar Rules End*/

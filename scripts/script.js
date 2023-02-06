@@ -98,14 +98,25 @@ function search_job() {
     }
 }
 
-function calculate() {
-    let AnnualIncome = document.getElementById('grossinput').value;
-    let GrossMonthly = AnnualIncome / 12;
-    let FederalTax = GrossMonthly * 0.01;
-        if (typeof(AnnualIncome) == 'number') {
-            document.getElementById('GrossMonthly').value = GrossMonthly;
-        }
-        else {
-            ReferenceError("Error!");
-        }
-    } 
+let AnnualIncome = document.getElementById('grossinput').value;
+console.log(AnnualIncome);
+let GrossMonthly = AnnualIncome / 12;
+let FederalTax = GrossMonthly * 0.12;
+let StateTax = GrossMonthly * 0.07;
+let SocialSecurity = GrossMonthly * 0.062;
+let Medicare = GrossMonthly * 0.0145;
+let StateDisability = GrossMonthly * 0.01;
+let RetirementInvestment = GrossMonthly * 0.05;
+let MedicalInsurance = 180.00;
+let TotalDeductions = FederalTax + StateTax + SocialSecurity + Medicare + StateDisability + RetirementInvestment + MedicalInsurance;
+let NetMonthly = GrossMonthly - TotalDeductions;
+document.getElementById('GrossMonthly').value = GrossMonthly;
+document.getElementById('FederalTax').value = FederalTax;
+document.getElementById('StateTax').value = StateTax;
+document.getElementById('SocialSecurity').value = SocialSecurity;
+document.getElementById('Medicare').value = Medicare;
+document.getElementById('StateDisability').value = StateDisability;
+document.getElementById('RetirementInvestment').value = RetirementInvestment;
+document.getElementById('MedicalInsurance').value = MedicalInsurance;
+document.getElementById('TotalDeductions').value = TotalDeductions;
+document.getElementById('NetMonthly').value = NetMonthly;

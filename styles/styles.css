@@ -50,15 +50,19 @@ footer {
     color: rgba(183, 0, 255, 1);
 }
 
+.s3head2 {
+    color: rgb(0, 17, 255);
+}
+
 .s1bg {
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     background-color: rgba(14, 17, 22, 1);
     box-shadow: 0px 0px 60px 70px rgba(14, 17, 22, 1);
 }
 
 .s2bg {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     background-color: rgba(14, 17, 22, 1);
     box-shadow: 0px 0px 60px 70px rgba(14, 17, 22, 1);
@@ -85,6 +89,15 @@ h2 {
 
 .s2bg > h2 {
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.s3head1 {
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 0.3em #fcff5f, 0 0 0.1em #fcff5f;
+}
+
+.s3head2 {
+    text-shadow: 1px 1px 3px rgb(187, 0, 255), 0 0 1em rgb(0, 17, 255), 0 0 0.2em rgb(0, 17, 255);
 }
 
 .s1 > div {
@@ -303,15 +316,30 @@ ol {
     margin: 5px 0 5px 0;
 }
 
-.areaFlex > textarea {
+.areaFlex > .AreaDecoration {
     resize: none;
     border: 3px rgb(24, 57, 165) solid;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.TaxDecoration {
+    resize: none;
+    border: 3px rgb(24, 57, 165) solid;
+    border-radius: 10px;
+    padding: 5px;
+    width: fit-content;
+    height: 30px;
 }
 
 
 .areaFlex > label {
     font-size: 1.5rem;
     font-family: 'Courier Prime', monospace;
+}
+
+footer {
+    color: white;
 }

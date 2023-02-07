@@ -98,25 +98,42 @@ function search_job() {
     }
 }
 
-let AnnualIncome = document.getElementById('grossinput').value;
-console.log(AnnualIncome);
-let GrossMonthly = AnnualIncome / 12;
-let FederalTax = GrossMonthly * 0.12;
-let StateTax = GrossMonthly * 0.07;
-let SocialSecurity = GrossMonthly * 0.062;
-let Medicare = GrossMonthly * 0.0145;
-let StateDisability = GrossMonthly * 0.01;
-let RetirementInvestment = GrossMonthly * 0.05;
-let MedicalInsurance = 180.00;
-let TotalDeductions = FederalTax + StateTax + SocialSecurity + Medicare + StateDisability + RetirementInvestment + MedicalInsurance;
-let NetMonthly = GrossMonthly - TotalDeductions;
-document.getElementById('GrossMonthly').value = GrossMonthly;
-document.getElementById('FederalTax').value = FederalTax;
-document.getElementById('StateTax').value = StateTax;
-document.getElementById('SocialSecurity').value = SocialSecurity;
-document.getElementById('Medicare').value = Medicare;
-document.getElementById('StateDisability').value = StateDisability;
-document.getElementById('RetirementInvestment').value = RetirementInvestment;
-document.getElementById('MedicalInsurance').value = MedicalInsurance;
-document.getElementById('TotalDeductions').value = TotalDeductions;
-document.getElementById('NetMonthly').value = NetMonthly;
+
+let AI = document.getElementById('grossinput');
+let AD = document.getAnimations('AreaDecoration');
+AI.addEventListener("change", (e) => calcs());
+function calcs(){
+    let FTI = document.getElementById('FTI').value / 100;
+    let STI = document.getElementById('STI').value / 100;
+    let SSI = document.getElementById('SSI').value / 100;
+    let MCI = document.getElementById('MCI').value / 100;
+    let SDI = document.getElementById('SDI').value / 100;
+    let RII = document.getElementById('RII').value / 100;
+    let GM = (AI.value / 12);
+    let MII = document.getElementById('MII').value / GM;
+    let TDI = ((FTI + STI + SSI + MCI + SDI + RII + MII) * 100).toFixed(2);
+    document.getElementById('TDI').value = TDI + "%";
+    let FT = (GM * FTI);
+    let ST = (GM * STI);
+    let SS = (GM * SSI);
+    let MC = (GM * MCI);
+    let SD = (GM * SDI);
+    let RI = (GM * RII);
+    let MI = (GM * MII);
+    let TD = (FT + ST + SS + MC + SD + RI + MI);
+    let NM = (GM - TD);
+    document.getElementById('GM').value = "$" + (GM.toFixed(2));
+    document.getElementById('FT').value = "$" + (FT.toFixed(2));
+    document.getElementById('ST').value = "$" + (ST.toFixed(2));
+    document.getElementById('SS').value = "$" + (SS.toFixed(2));
+    document.getElementById('MC').value = "$" + (MC.toFixed(2));
+    document.getElementById('SD').value = "$" + (SD.toFixed(2));
+    document.getElementById('RI').value = "$" + (RI.toFixed(2));
+    document.getElementById('MI').value = "$" + (MI.toFixed(2));
+    document.getElementById('TD').value = "$" + (TD.toFixed(2));
+    document.getElementById('NM').value = "$" + (NM.toFixed(2));
+}
+
+/* Variable = ID of HTML Element , then addEventListener to notice when HTML Element has changed , 
+which then calls on a function that contains your calculations.
+*/

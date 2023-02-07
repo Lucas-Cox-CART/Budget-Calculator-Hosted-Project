@@ -20,7 +20,7 @@
 <body>
     <header>
         <div class="menu">
-            <h1>Ready to avoid your taxes?</h1>
+            <h1>Need help with your budget?</h1>
         </div>
     </header>
     <main>
@@ -45,54 +45,96 @@
                 <div>
                     <div class="labelFlex">
                         <div class="areaFlex">
-                            <label type="number" for="GrossMonthly">Gross Monthly Income:</label>
-                            <textarea readonly id="GrossMonthly" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="GM">Gross Monthly Income:</label>
+                            <textarea readonly id="GM" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="FederalTax">Federal Tax:</label>
-                            <textarea readonly id="FederalTax" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="FT">Federal Tax:</label>
+                            <textarea  maxlength="6" id="FTI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="FT" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="StateTax">State Tax:</label>
-                            <textarea readonly id="StateTax" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="ST">State Tax:</label>
+                            <textarea  maxlength="6" id="STI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="ST" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="SocialSecurity">Social Security:</label>
-                            <textarea readonly id="SocialSecurity" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="SS">Social Security:</label>
+                            <textarea  maxlength="6" id="SSI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="SS" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="Medicare">Medicare:</label>
-                            <textarea readonly id="Medicare" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="MC">Medicare:</label>
+                            <textarea  maxlength="6" id="MCI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="MC" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="StateDisability">State Disability:</label>
-                            <textarea readonly id="StateDisability" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="SD">State Disability:</label>
+                            <textarea  maxlength="6" id="SDI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="SD" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="RetirementInvestment">Retirement Investment:</label>
-                            <textarea readonly id="RetirementInvestment" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="RI">Retirement Investment:</label>
+                            <textarea  maxlength="6" id="RII" class="TaxDecoration"></textarea>
+                            <textarea readonly id="RI" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="MedicalInsurance">Medical Insurance:</label>
-                            <textarea readonly id="MedicalInsurance" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="MI">Medical Insurance:</label>
+                            <textarea  maxlength="6" id="MII" class="TaxDecoration"></textarea>
+                            <textarea readonly id="MI" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="TotalDeductions">Total Deductions:</label>
-                            <textarea readonly id="TotalDeductions" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="TD">Total Deductions:</label>
+                            <textarea  readonly maxlength="6" id="TDI" class="TaxDecoration"></textarea>
+                            <textarea readonly id="TD" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
-                            <label type="number" for="NetMonthly">Net Monthly Income:</label>
-                            <textarea readonly id="NetMonthly" cols="5" rows="1" value=""></textarea>
+                            <label type="number" for="NM">Net Monthly Income:</label>
+                            <textarea readonly id="NM" class="AreaDecoration" value=""></textarea>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="s3bg">
-            <h2>Placeholder</h2>
+            <h2><span class="s3head1">Finally, let's balance your </span><span class="s3head2">checkbook</span>.</h2>
             <div class="s3">
-                <div class="pixelart-to-css"></div>
-                <p>pina colada</p>
+                <div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <div>
+                            <form action="">
+                                <input type="text">
+                            </form>
+                        </div>
+                        <div>
+                            <form action="">
+                                <input type="text">
+                            </form>
+                        </div>
+                        <div>
+                            <form action="">
+                                <input type="text">
+                            </form>
+                        </div>
+                        <div>
+                            <form action="">
+                                <input type="text">
+                            </form>
+                        </div>
+                        <div>
+                            <form action="">
+                                <input type="text">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -110,4 +152,3 @@
     <script src="../scripts/script.js"></script>
 </body>
 </html>
-<!-- <p id="CurrentBalance"></p> -->

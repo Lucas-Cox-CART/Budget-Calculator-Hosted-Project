@@ -77,8 +77,15 @@ let item;
 for (job of data) {
     let item = document.createElement("div");
     item.innerText = job[0];
+    item.setAttribute('data-salary', job[1]);
     item.setAttribute("class","job");
     list.appendChild(item);
+    list.addEventListener('click', (event) => {
+        document.getElementById('grossinput').value = event.target.getAttribute('data-salary');
+    });
+    // item.onclick = function select_job() {
+    //     document.getElementById('grossinput').value = AI;
+    // }
 }
 
 function search_job() {

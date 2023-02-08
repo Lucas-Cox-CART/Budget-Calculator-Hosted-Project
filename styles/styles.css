@@ -162,13 +162,15 @@ div > ::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
-input[type=text] {
+input[id=grossinput],
+input[id=searchbar] {
     width: 30%;
     -webkit-transition: width 0.15s ease-in-out;
     transition: width 0.15s ease-in-out;
 }
 
-input[type=text]:focus {
+input[id=grossinput]:focus,
+input[id=searchbar]:focus {
     width: 70%;
 }
 

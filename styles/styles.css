@@ -305,7 +305,6 @@ ol {
 
 .labelFlex {
     display: inline-block;
-    width: 50%;
     text-align: right;
 }
 
@@ -322,7 +321,7 @@ ol {
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     width: 100px;
-    height: 30px;
+    height: 35px;
 }
 
 .TaxDecoration {
@@ -331,7 +330,7 @@ ol {
     border-radius: 10px;
     padding: 5px;
     width: fit-content;
-    height: 30px;
+    height: 35px;
 }
 
 

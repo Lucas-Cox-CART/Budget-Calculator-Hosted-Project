@@ -72,6 +72,8 @@ const data = [
 ]
 
 let list = document.getElementById("list");
+let item;
+
 for (job of data) {
     let item = document.createElement("div");
     item.innerText = job[0];
@@ -98,10 +100,10 @@ function search_job() {
     }
 }
 
-
 let AI = document.getElementById('grossinput');
 let AD = document.getAnimations('AreaDecoration');
 AI.addEventListener("change", (e) => calcs());
+
 function calcs(){
     let FTI = document.getElementById('FTI').value / 100;
     let STI = document.getElementById('STI').value / 100;

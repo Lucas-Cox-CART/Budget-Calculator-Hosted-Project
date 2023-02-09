@@ -70,10 +70,8 @@ const data = [
     [ 'Welder/Metal Specialist', 47250 ],
     [ 'Wind EnergyTechnician', 56700 ]
 ]
-
 let list = document.getElementById("list");
 let item;
-
 for (job of data) {
     let item = document.createElement("div");
     item.innerText = job[0];
@@ -83,11 +81,7 @@ for (job of data) {
     list.addEventListener('click', (event) => {
         document.getElementById('grossinput').value = event.target.getAttribute('data-salary');
     });
-    // item.onclick = function select_job() {
-    //     document.getElementById('grossinput').value = AI;
-    // }
 }
-
 function search_job() {
     let input = document.getElementById('searchbar').value;
     input=input.toLowerCase();
@@ -106,12 +100,10 @@ function search_job() {
         }
     }
 }
-
 let AI = document.getElementById('grossinput');
 let AD = document.getAnimations('AreaDecoration');
 AI.addEventListener("change", (e) => calcs());
-
-function calcs(){
+function calcs() {
     let FTI = document.getElementById('FTI').value / 100;
     let STI = document.getElementById('STI').value / 100;
     let SSI = document.getElementById('SSI').value / 100;
@@ -142,7 +134,29 @@ function calcs(){
     document.getElementById('TD').value = "$" + (TD.toFixed(2));
     document.getElementById('NM').value = "$" + (NM.toFixed(2));
 }
+let CBIH;
+let LT = document.getElementById('LogTrigger');
+let AH = document.getElementById('ActionHistory');
+LT.addEventListener('click', (e) => checkBookFunc());
+function checkBookFunc() {
+    let CBIH = document.createElement("div");
+    CBIH.setAttribute("class", "checkBookItemHandler");
+    AH.appendChild(CBIH);
+    
+    for (i = 0; i < 5; i++) {
+        let form = document.createElement("form");
+        form.setAttribute("class", "checkBookItem");
+        CBIH.appendChild(form);
+    }
 
-/* Variable = ID of HTML Element , then addEventListener to notice when HTML Element has changed , 
-which then calls on a function that contains your calculations.
-*/
+    let AD = document.createElement("input");
+    AD.setAttribute("type", "text");
+    AD.innerText = document.getElementById('ActionDetails');
+    form.appendChild(AD);
+
+    let select = document.createElement("select");
+        for (i = 0; i < 2; i++) {
+        let option = document.createElement("option");
+        option.setAttribute("id", "PayM");
+    }
+}

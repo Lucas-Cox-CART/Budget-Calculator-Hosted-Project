@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-main,
-footer {
+main {
     background-color: rgba(14, 17, 22, 1);
 }
 
@@ -18,6 +17,8 @@ footer {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-color: wheat;
+    background-blend-mode: color-burn;
     height: 100vh;
     width: 100%;
 }
@@ -31,8 +32,7 @@ footer {
 }
 
 .s1,
-.s2,
-.s3 {
+.s2 {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -40,6 +40,17 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     color: white;
+}
+
+.s3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: rgb(0, 0, 0);
+    padding-top: 10vh;
 }
 
 .s1head {
@@ -50,8 +61,14 @@ footer {
     color: rgba(183, 0, 255, 1);
 }
 
+.s3head1 {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 0.3em #feffc6, 0 0 0.1em #feffd6;
+}
+
 .s3head2 {
     color: rgb(0, 17, 255);
+    text-shadow: 1px 1px 3px rgb(237, 187, 255), 0 0 1em rgb(139, 147, 255), 0 0 0.2em rgb(163, 169, 255);
 }
 
 .s1bg {
@@ -59,6 +76,15 @@ footer {
     width: 100%;
     background-color: rgba(14, 17, 22, 1);
     box-shadow: 0px 0px 60px 70px rgba(14, 17, 22, 1);
+}
+
+.s1bg *::selection,
+.s2bg *::selection {
+    background-color: #0099ff;
+}
+
+.s3bg *::selection {
+    background-color: rgba(0, 206, 255, 1);
 }
 
 .s2bg {
@@ -89,15 +115,6 @@ h2 {
 
 .s2bg > h2 {
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-}
-
-.s3head1 {
-    color: white;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 0.3em #fcff5f, 0 0 0.1em #fcff5f;
-}
-
-.s3head2 {
-    text-shadow: 1px 1px 3px rgb(187, 0, 255), 0 0 1em rgb(0, 17, 255), 0 0 0.2em rgb(0, 17, 255);
 }
 
 .s1 > div {
@@ -131,7 +148,7 @@ div > ::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #777575;
 }
 
 div > ::-webkit-scrollbar-thumb {
@@ -342,5 +359,47 @@ ol {
 }
 
 footer {
-    color: white;
+    color: black;
+    background-color: #EFDECD;
+}
+
+.checkBook {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.checkBookItemHandler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.checkBookItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    margin: 1px;
+    height: 100%;
+    border: 2px black solid;
+    text-align: center;
+}
+
+.checkBookItem > * {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s3 > input[type=button] {
+    width: 15%;
+    padding: 10px 5px 10px 5px;
+    margin: 30px;
 }

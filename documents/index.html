@@ -97,38 +97,47 @@
             </div>
         </section>
         <section class="s3bg">
-            <h2><span class="s3head1">Finally, let's balance your </span><span class="s3head2">checkbook</span>.</h2>
+            <h2><span class="s3head1">Finally, let's balance your </span><span class="s3head2">checkbook</span><span class="s3head1">.</span></h2>
             <div class="s3">
-                <div>
-                    <div>
-                        <p>Transaction Description</p>
-                        <p>Payment/Withdrawl</p>
-                        <p>Deposit/Credit</p>
-                        <p>Balance</p>
-                    </div>
-                    <div>
-                        <div>
-                            <form>
-                                <input type="text">
-                            </form>
+                <article class="checkBook">
+                    <div class="checkBookItemHandler">
+                        <div class="checkBookItem">
+                            <p>Transaction Description</p>
                         </div>
-                        <div>
-                            <form>
-                                <input type="number">
-                            </form>
+                        <div class="checkBookItem">
+                            <p>Payment / Withdrawl</p>
                         </div>
-                        <div>
-                            <form>
-                                <input type="number">
-                            </form>
+                        <div class="checkBookItem">
+                            <p>Deposit / Credit</p>
                         </div>
-                        <div>
-                            <form>
-                                <input type="number">
-                            </form>
+                        <div class="checkBookItem">
+                            <p>Balance</p>
                         </div>
                     </div>
-                </div>
+                    <div class="checkBookItemHandler">
+                        <form class="checkBookItem">
+                            <input type="text" id="ActionDetails"  placeholder="Awaiting entry...">
+                        </form>
+                        <form class="checkBookItem">
+                            <select>
+                                <option value="Payment" id="PayM">Payment</option>
+                                <option value="Withdrawl" id="CredT">Withdrawl</option>
+                            </select>
+                        </form>
+                        <form class="checkBookItem">
+                            <input type="number" id="ADValue" placeholder="Awaiting entry...">
+                        </form>
+                        <form class="checkBookItem">
+                            <input type="number" id="BRemain" placeholder="Awaiting entry...">
+                        </form>
+                    </div>
+                </article>
+                <input type="button" id="LogTrigger" value="Log Transaction">
+                <article id="ActionHistory">
+                    <div>
+                        <p>Transaction History</p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>

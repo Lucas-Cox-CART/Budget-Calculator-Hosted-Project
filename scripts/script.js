@@ -143,7 +143,7 @@ function checkBookFunc() {
     CBIH.setAttribute("class", "checkBookItemHandler");
     AH.appendChild(CBIH);
     
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 4; i++) {
         let form = document.createElement("form");
         form.setAttribute("class", "checkBookItem");
         CBIH.appendChild(form);

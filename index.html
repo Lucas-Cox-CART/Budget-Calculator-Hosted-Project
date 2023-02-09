@@ -50,37 +50,37 @@
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="FT">Federal Tax:</label>
-                            <textarea  maxlength="6" id="FTI" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="FTI" class="TaxDecoration">12</textarea>
                             <textarea readonly id="FT" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="ST">State Tax:</label>
-                            <textarea  maxlength="6" id="STI" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="STI" class="TaxDecoration">7</textarea>
                             <textarea readonly id="ST" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="SS">Social Security:</label>
-                            <textarea  maxlength="6" id="SSI" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="SSI" class="TaxDecoration">6.2</textarea>
                             <textarea readonly id="SS" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="MC">Medicare:</label>
-                            <textarea  maxlength="6" id="MCI" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="MCI" class="TaxDecoration">1.45</textarea>
                             <textarea readonly id="MC" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="SD">State Disability:</label>
-                            <textarea  maxlength="6" id="SDI" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="SDI" class="TaxDecoration">1</textarea>
                             <textarea readonly id="SD" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="RI">Retirement Investment:</label>
-                            <textarea  maxlength="6" id="RII" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="RII" class="TaxDecoration">5</textarea>
                             <textarea readonly id="RI" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
                             <label type="number" for="MI">Medical Insurance:</label>
-                            <textarea  maxlength="6" id="MII" class="TaxDecoration"></textarea>
+                            <textarea  maxlength="6" id="MII" class="TaxDecoration">180</textarea>
                             <textarea readonly id="MI" class="AreaDecoration" value=""></textarea>
                         </div>
                         <div class="areaFlex">
@@ -91,6 +91,10 @@
                         <div class="areaFlex">
                             <label type="number" for="NM">Net Monthly Income:</label>
                             <textarea readonly id="NM" class="AreaDecoration" value=""></textarea>
+                        </div>
+                        <div class="areaFlex">
+                            <label type="number" for="HA">Housing Affordability:</label>
+                            <textarea readonly id="HA" class="AreaDecoration" value=""></textarea>
                         </div>
                     </div>
                 </div>
@@ -116,24 +120,27 @@
                     </div>
                     <div class="checkBookItemHandler">
                         <form class="checkBookItem">
-                            <input type="text" id="ActionDetails"  placeholder="Awaiting entry...">
+                            <input onsubmit="return false;" type="text" id="ActionDetails"  placeholder="Awaiting entry...">
                         </form>
                         <form class="checkBookItem">
-                            <select>
+                            <select id="selectType">
                                 <option value="Payment" id="PayM">Payment</option>
                                 <option value="Withdrawl" id="CredT">Withdrawl</option>
                             </select>
                         </form>
-                        <form class="checkBookItem">
+                        <form onsubmit="return false;" class="checkBookItem">
                             <input type="number" id="ADValue" placeholder="Awaiting entry...">
                         </form>
-                        <form class="checkBookItem">
+                        <form onsubmit="return false;" class="checkBookItem">
                             <input type="number" id="BRemain" placeholder="Awaiting entry...">
                         </form>
                     </div>
                 </article>
-                <input type="button" id="LogTrigger" value="Log Transaction">
-                <article id="ActionHistory">
+                <div class="ButtonHolder">
+                    <input type="button" id="LogTrigger" value="Log Transaction">
+                    <input type="button" id="ResetTrigger" value="Reset Trigger">
+                </div>
+                <article id="actionHistory">
                     <div>
                         <p>Transaction History</p>
                     </div>

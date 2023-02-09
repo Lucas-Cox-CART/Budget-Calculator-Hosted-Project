@@ -70,6 +70,7 @@ const data = [
     [ 'Welder/Metal Specialist', 47250 ],
     [ 'Wind EnergyTechnician', 56700 ]
 ]
+
 let list = document.getElementById("list");
 let item;
 for (job of data) {
@@ -82,6 +83,7 @@ for (job of data) {
         document.getElementById('grossinput').value = event.target.getAttribute('data-salary');
     });
 }
+
 function search_job() {
     let input = document.getElementById('searchbar').value;
     input=input.toLowerCase();
@@ -100,9 +102,12 @@ function search_job() {
         }
     }
 }
+
+let NM;
 let AI = document.getElementById('grossinput');
 let AD = document.getAnimations('AreaDecoration');
 AI.addEventListener("change", (e) => calcs());
+
 function calcs() {
     let FTI = document.getElementById('FTI').value / 100;
     let STI = document.getElementById('STI').value / 100;
@@ -122,7 +127,8 @@ function calcs() {
     let RI = (GM * RII);
     let MI = (GM * MII);
     let TD = (FT + ST + SS + MC + SD + RI + MI);
-    let NM = (GM - TD);
+    NM = (GM - TD);
+    let HA = (GM * 0.33);
     document.getElementById('GM').value = "$" + (GM.toFixed(2));
     document.getElementById('FT').value = "$" + (FT.toFixed(2));
     document.getElementById('ST').value = "$" + (ST.toFixed(2));
@@ -133,30 +139,78 @@ function calcs() {
     document.getElementById('MI').value = "$" + (MI.toFixed(2));
     document.getElementById('TD').value = "$" + (TD.toFixed(2));
     document.getElementById('NM').value = "$" + (NM.toFixed(2));
+    document.getElementById('HA').value = "$" + (HA.toFixed(2));
 }
+
 let CBIH;
 let LT = document.getElementById('LogTrigger');
-let AH = document.getElementById('ActionHistory');
+let AH = document.getElementById('actionHistory');
 LT.addEventListener('click', (e) => checkBookFunc());
+
 function checkBookFunc() {
     let CBIH = document.createElement("div");
     CBIH.setAttribute("class", "checkBookItemHandler");
     AH.appendChild(CBIH);
+    let form1 = document.createElement("form");
+    form1.setAttribute("class", "checkBookItem");
+    let form2 = document.createElement("form");
+    form2.setAttribute("class", "checkBookItem");
+    let form3 = document.createElement("form");
+    form3.setAttribute("class", "checkBookItem");
+    let form4 = document.createElement("form");
+    form4.setAttribute("class", "checkBookItem");
     
-    for (i = 0; i < 4; i++) {
-        let form = document.createElement("form");
-        form.setAttribute("class", "checkBookItem");
-        CBIH.appendChild(form);
-    }
+    CBIH.appendChild(form1);
+    CBIH.appendChild(form2);
+    CBIH.appendChild(form3);
+    CBIH.appendChild(form4);
 
     let AD = document.createElement("input");
     AD.setAttribute("type", "text");
-    AD.innerText = document.getElementById('ActionDetails');
-    form.appendChild(AD);
+    AD.value = document.getElementById('ActionDetails').value;
+    form1.appendChild(AD);
 
-    let select = document.createElement("select");
-        for (i = 0; i < 2; i++) {
-        let option = document.createElement("option");
-        option.setAttribute("id", "PayM");
+    if (AD.value == "") {
+        AD.value = "NaN";
+    }
+
+    let TT = document.createElement("input");
+    TT.setAttribute("type", "text");
+    TT.setAttribute("disabled", "");
+    TT.value = document.getElementById('selectType').value;
+    form2.appendChild(TT);
+
+    let ADV = document.createElement("input");
+    ADV.setAttribute("type", "number");
+    ADV.value = document.getElementById('ADValue').value;
+    form3.appendChild(ADV);
+    if (ADV.value == "") {
+        ADV.value = "NaN";
+    }
+
+    let BR = document.createElement("input");
+    BR.setAttribute("type", "number");
+    BR.setAttribute("disabled", "");
+    if (TT.value == "Payment") {
+        BR.value = parseFloat(document.getElementById('BRemain').value) + parseFloat(ADV.value);
+    } else if (TT.value == "Withdrawl") {
+        BR.value = parseFloat(document.getElementById('BRemain').value) - parseFloat(ADV.value);
+    } else {
+        document.getElementById('BRemain').value = "Error!";
+    }
+    document.getElementById('BRemain').value = BR.value;
+    form4.appendChild(BR);
+    if (BR.value == "") {
+        BR.value = "NaN";
+    }
+
+    let RT = document.getElementById('ResetTrigger');
+    RT.addEventListener('click', (e) => resetValues()); 
+    function resetValues() {
+        document.getElementById('BRemain').value = 0;
+        document.getElementById('ADValue').value = 0;
+        document.getElementById('selectType').value = "Payment";
+        document.getElementById('ActionDetails').value = "";
+        document.getElementById("actionHistory").innerHTML= `<div><p>Transaction History</p></div>`;
     }
 }
